@@ -1,0 +1,39 @@
+ubuntu 1604
+
+sudo apt-get install git gnupg flex bison gperf build-essential zip curl libc6-dev x11proto-core-dev u-boot-tools libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-glx:i386 libgl1-mesa-dev g++-multilib tofrodos libncurses5-dev python-markdown libxml2-utils xsltproc zlib1g-dev:i386
+
+sudo apt-get install phablet-tools sed wget cvs subversion git-core coreutils unzip texi2html  texinfo libsdl1.2-dev docbook-utils gawk python-pysqlite2 diffstat help2man  make gcc build-essential g++ desktop-file-utils chrpath libgl1-mesa-dev  libglu1-mesa-dev mercurial autoconf automake groff libtool xterm lib32z1
+
+
+sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath libsdl1.2-dev xterm
+
+sudo apt-get install gzip pax screen build-essential gcc-multilib zlib1g-dev texinfo unzip libtool autoconf xterm  socat chrpath diffstat wget gnupg libselinux1 bison flex libssl-dev zlib1g:i386 tftpd libncurses5-dev net-tools gawk
+
+
+终端代理：
+sudo apt-get install polipo
+
+vi /etc/polipo/config
+[
+logSyslog = true
+logFile = /var/log/polipo/polipo.log
+
+proxyAddress = "0.0.0.0"
+
+socksParentProxy = "127.0.0.1:1080"
+socksProxyType = socks5
+
+chunkHighMark = 50331648
+objectHighMark = 16384
+
+serverMaxSlots = 64
+serverSlots = 16
+serverSlots1 = 32
+]
+
+sudo /etc/init.d/polipo restart
+
+export http_proxy="http://127.0.0.1:8123/"
+export https_proxy="http://127.0.0.1:8123/"
+
+curl www.google.com
